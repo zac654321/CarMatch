@@ -66,8 +66,8 @@ const CardGame: React.FC = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Supercar Guess
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{fontFamily: 'Racing Sans One, sans-serif', letterSpacing: '0.1em', textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
+            SUPERCAR GUESS
           </h1>
           <p className="text-gray-300 text-lg">Memory Card Game - Match the Supercars</p>
           
