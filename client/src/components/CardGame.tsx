@@ -89,7 +89,7 @@ const CardGame: React.FC = () => {
         <GameStats
           moves={moves}
           matchedPairs={matchedPairs}
-          totalPairs={12}
+          totalPairs={8}
           isGameComplete={isGameComplete}
           onRestart={handleRestart}
           gameTime={gameTime}
@@ -97,7 +97,7 @@ const CardGame: React.FC = () => {
 
         {/* Game Board */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-5 gap-2 md:gap-4 max-w-2xl w-full">
+          <div className="grid grid-cols-4 gap-2 md:gap-4 max-w-2xl w-full">
             {cards.map((card) => (
               <Card
                 key={card.id}
@@ -132,8 +132,7 @@ const CardGame: React.FC = () => {
         <div className="mt-8 text-center text-gray-400 max-w-2xl mx-auto">
           <p className="text-sm">
             Click on cards to flip them over and find matching pairs of luxury supercars. 
-            The center card with the Hot Wheels logo cannot be flipped. 
-            Complete the game by matching all 12 pairs!
+            Complete the game by matching all 8 pairs!
           </p>
         </div>
       </div>

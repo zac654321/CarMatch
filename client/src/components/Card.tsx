@@ -29,12 +29,8 @@ const Card: React.FC<CardProps> = ({ card, onCardClick, disabled }) => {
       'Ferrari SF90 Stradale': '/cars/Ferrari SF90 Stradale_1758684593102.avif',
       'McLaren 720S': '/cars/McLaren 720S_1758684593105.jpg',
       'Porsche 911 GT2 RS': '/cars/Porsche 911 GT2 RS_1758684593107.jpg',
-      'Aston Martin Valkyrie': '/cars/Aston Martin Valkyrie_1758684593099.webp',
       'Koenigsegg Jesko': '/cars/Koenigsegg Jesko_1758684593103.webp',
       'Pagani Huayra': '/cars/Pagani Huayra_1758684593107.webp',
-      'Lamborghini Huracán STO': '/cars/Lamborghini Huracán STO_1758684593104.jpg',
-      'McLaren Artura': '/cars/McLaren Artura_1758684593106.jpg',
-      'Ferrari 296 GTB': '/cars/Ferrari 296 GTB_1758684593101.jpg',
       'Aston Martin DBS Superleggera': '/cars/Aston Martin DBS Superleggera_1758684593097.webp'
     };
     return carImages[carName] || '';
