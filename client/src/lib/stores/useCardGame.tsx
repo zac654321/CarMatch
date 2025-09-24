@@ -27,13 +27,13 @@ interface CardGameState {
 
 const carNames = [
   'Bugatti Chiron',
-  'Lamborghini Aventador SVJ',
+  'Lamborghini Aventador',
   'Ferrari SF90 Stradale',
   'McLaren 720S',
   'Porsche 911 GT2 RS',
   'Koenigsegg Jesko',
   'Pagani Huayra',
-  'Aston Martin DBS Superleggera'
+  'Aston Martin DBS'
 ];
 
 const shuffleArray = <T,>(array: T[]): T[] => {

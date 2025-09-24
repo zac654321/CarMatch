@@ -25,13 +25,13 @@ const Card: React.FC<CardProps> = ({ card, onCardClick, disabled }) => {
   const getCarImage = (carName: string) => {
     const carImages: Record<string, string> = {
       'Bugatti Chiron': '/cars/Bugatti Chiron_1758684593100.jpg',
-      'Lamborghini Aventador SVJ': '/cars/Lamborghini Aventador SVJ_1758684593103.jpg',
+      'Lamborghini Aventador': '/cars/Lamborghini Aventador SVJ_1758684593103.jpg',
       'Ferrari SF90 Stradale': '/cars/Ferrari SF90 Stradale_1758684593102.avif',
       'McLaren 720S': '/cars/McLaren 720S_1758684593105.jpg',
       'Porsche 911 GT2 RS': '/cars/Porsche 911 GT2 RS_1758684593107.jpg',
       'Koenigsegg Jesko': '/cars/Koenigsegg Jesko_1758684593103.webp',
       'Pagani Huayra': '/cars/Pagani Huayra_1758684593107.webp',
-      'Aston Martin DBS Superleggera': '/cars/Aston Martin DBS Superleggera_1758684593097.webp'
+      'Aston Martin DBS': '/cars/Aston Martin DBS Superleggera_1758684593097.webp'
     };
     return carImages[carName] || '';
   };
