@@ -22,22 +22,22 @@ const Card: React.FC<CardProps> = ({ card, onCardClick, disabled }) => {
     }
   };
 
-  const getCarGradient = (carName: string) => {
-    const gradients: Record<string, string> = {
-      'Bugatti Chiron': 'from-blue-600 via-blue-800 to-black',
-      'Lamborghini Aventador SVJ': 'from-orange-500 via-yellow-500 to-red-600',
-      'Ferrari SF90 Stradale': 'from-red-600 via-red-700 to-red-900',
-      'McLaren 720S': 'from-orange-400 via-orange-600 to-orange-800',
-      'Porsche 911 GT2 RS': 'from-gray-400 via-gray-600 to-gray-800',
-      'Aston Martin Valkyrie': 'from-green-600 via-green-700 to-green-900',
-      'Koenigsegg Jesko': 'from-purple-600 via-purple-800 to-black',
-      'Pagani Huayra': 'from-amber-400 via-amber-600 to-amber-800',
-      'Lamborghini Huracán STO': 'from-lime-500 via-green-600 to-green-800',
-      'McLaren Artura': 'from-cyan-500 via-blue-600 to-blue-800',
-      'Ferrari 296 GTB': 'from-red-500 via-pink-600 to-red-700',
-      'Aston Martin DBS Superleggera': 'from-emerald-600 via-teal-700 to-green-800'
+  const getCarImage = (carName: string) => {
+    const carImages: Record<string, string> = {
+      'Bugatti Chiron': '/cars/Bugatti Chiron_1758684593100.jpg',
+      'Lamborghini Aventador SVJ': '/cars/Lamborghini Aventador SVJ_1758684593103.jpg',
+      'Ferrari SF90 Stradale': '/cars/Ferrari SF90 Stradale_1758684593102.avif',
+      'McLaren 720S': '/cars/McLaren 720S_1758684593105.jpg',
+      'Porsche 911 GT2 RS': '/cars/Porsche 911 GT2 RS_1758684593107.jpg',
+      'Aston Martin Valkyrie': '/cars/Aston Martin Valkyrie_1758684593099.webp',
+      'Koenigsegg Jesko': '/cars/Koenigsegg Jesko_1758684593103.webp',
+      'Pagani Huayra': '/cars/Pagani Huayra_1758684593107.webp',
+      'Lamborghini Huracán STO': '/cars/Lamborghini Huracán STO_1758684593104.jpg',
+      'McLaren Artura': '/cars/McLaren Artura_1758684593106.jpg',
+      'Ferrari 296 GTB': '/cars/Ferrari 296 GTB_1758684593101.jpg',
+      'Aston Martin DBS Superleggera': '/cars/Aston Martin DBS Superleggera_1758684593097.webp'
     };
-    return gradients[carName] || 'from-gray-500 to-gray-700';
+    return carImages[carName] || '';
   };
 
   const renderCardContent = () => {
@@ -57,21 +57,33 @@ const Card: React.FC<CardProps> = ({ card, onCardClick, disabled }) => {
     }
 
     if (card.isFlipped || card.isMatched) {
+      const carImageSrc = getCarImage(card.carName);
       return (
-        <div className={cn(
-          "flex flex-col items-center justify-center h-full bg-gradient-to-br text-white p-2",
-          getCarGradient(card.carName)
-        )}>
-          {/* Car icon using SVG */}
-          <svg className="w-8 h-8 mb-2" viewBox="0 0 100 50" fill="currentColor">
-            <ellipse cx="20" cy="40" rx="8" ry="8" fill="black"/>
-            <ellipse cx="80" cy="40" rx="8" ry="8" fill="black"/>
-            <path d="M5 35 L15 25 L25 20 L75 20 L85 25 L95 35 L95 40 L5 40 Z"/>
-            <rect x="25" y="15" width="50" height="15" rx="5"/>
-          </svg>
-          <span className="text-xs font-semibold text-center leading-tight">
-            {card.carName}
-          </span>
+        <div className="relative h-full overflow-hidden">
+          {carImageSrc ? (
+            <img 
+              src={carImageSrc}
+              alt={card.carName}
+              className="w-full h-full object-cover rounded-lg"
+              onError={(e) => {
+                console.error(`Failed to load image for ${card.carName}:`, carImageSrc);
+                // Fallback to a solid color background if image fails
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          ) : (
+            <div className="flex items-center justify-center h-full bg-gradient-to-br from-gray-600 to-gray-800 text-white">
+              <span className="text-xs font-semibold text-center">
+                {card.carName}
+              </span>
+            </div>
+          )}
+          {/* Car name overlay */}
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-1">
+            <span className="text-xs font-semibold text-center block leading-tight">
+              {card.carName}
+            </span>
+          </div>
         </div>
       );
     }
