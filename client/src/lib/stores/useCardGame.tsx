@@ -31,12 +31,8 @@ const carNames = [
   'Ferrari SF90 Stradale',
   'McLaren 720S',
   'Porsche 911 GT2 RS',
-  'Aston Martin Valkyrie',
   'Koenigsegg Jesko',
   'Pagani Huayra',
-  'Lamborghini Huracán STO',
-  'McLaren Artura',
-  'Ferrari 296 GTB',
   'Aston Martin DBS Superleggera'
 ];
 
@@ -66,28 +62,8 @@ const generateCards = (): CardData[] => {
     }
   ]);
 
-  // Shuffle the pairs
-  const shuffledCards = shuffleArray(cardPairs);
-
-  // Create 5x5 grid with center card
-  const gridCards: CardData[] = [];
-  
-  for (let i = 0; i < 25; i++) {
-    if (i === 12) { // Center position (index 12 in 5x5 grid)
-      gridCards.push({
-        id: 'center',
-        carName: 'Hot Wheels',
-        isFlipped: true,
-        isMatched: true,
-        isCenter: true
-      });
-    } else {
-      const cardIndex = i < 12 ? i : i - 1; // Adjust for center card
-      gridCards.push(shuffledCards[cardIndex]);
-    }
-  }
-
-  return gridCards;
+  // Shuffle the pairs and return them directly for 4x4 grid
+  return shuffleArray(cardPairs);
 };
 
 export const useCardGame = create<CardGameState>()(
@@ -169,7 +145,7 @@ export const useCardGame = create<CardGameState>()(
           flippedCards: [],
           matchedPairs: newMatchedPairs,
           moves: state.moves + 1,
-          isGameComplete: newMatchedPairs === 12
+          isGameComplete: newMatchedPairs === 8
         }));
       } else {
         // No match, flip cards back
