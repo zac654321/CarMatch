@@ -67,9 +67,9 @@ const CardGame: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Car Guess
+            Supercar Guess
           </h1>
-          <p className="text-gray-300 text-lg">Memory Card Game - Match the Luxury Supercars</p>
+          <p className="text-gray-300 text-lg">Memory Card Game - Match the Supercars</p>
           
           {/* Sound toggle */}
           <div className="mt-4">
@@ -131,7 +131,7 @@ const CardGame: React.FC = () => {
         {/* Instructions */}
         <div className="mt-8 text-center text-gray-400 max-w-2xl mx-auto">
           <p className="text-sm">
-            Click on cards to flip them over and find matching pairs of luxury supercars. 
+            Click on cards to flip them over and find matching pairs of supercars. 
             Complete the game by matching all 8 pairs!
           </p>
         </div>

@@ -32,7 +32,7 @@ function App() {
   return (
     <Suspense fallback={
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading Car Guess Game...</div>
+        <div className="text-white text-xl">Loading Supercar Guess Game...</div>
       </div>
     }>
       <CardGame />
