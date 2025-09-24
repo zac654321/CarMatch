@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ card, onCardClick, disabled }) => {
 
   const getCarImage = (carName: string) => {
     const carImages: Record<string, string> = {
-      'Bugatti Chiron': '/cars/Bugatti Chiron_1758684593100.jpg',
+      'Bugatti Chiron': '/cars/Bugatti Chiron_1758692458742.jpg',
       'Lamborghini Aventador': '/cars/Lamborghini Aventador SVJ_1758684593103.jpg',
       'Ferrari SF90 Stradale': '/cars/Ferrari SF90 Stradale_1758684593102.avif',
       'McLaren 720S': '/cars/McLaren 720S_1758684593105.jpg',
